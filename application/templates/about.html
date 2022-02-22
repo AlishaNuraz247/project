@@ -1,3 +1,5 @@
+{% extends "layout.html" %}
+{% block body %}
 <body>
     <h1>Add a new dog:</h1>
     <p>
@@ -8,9 +10,11 @@
                 <!-- Each field displays its label followed by the input field itself -->
                 {{ form.name.label }} {{ form.name }}
                 <br>
-                {{ form.dob.label }} {{ form.dob }}
+                {{ form.owner.label }} {{ form.owner }}
                 <br>
                 {{ form.breed.label }} {{ form.breed }}
+                <br>
+                {{ form.notes.label }} {{ form.notes }}
                 <br>
                 <!-- form.submit is a button -->
                 {{ form.submit }}
@@ -19,3 +23,4 @@
         </div>
     </p>
 </body>
+{% endblock %}

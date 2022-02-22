@@ -1,11 +1,22 @@
 from application import app, db
 from application.models import Dog 
+from application.forms import DogForm
+from flask import render_template, url_for
+@app.route('/')
+def home():
+    return render_template('layout.html', title='home')
 
 @app.route('/add')
 def add():
-    dog_breed = Dog(name="breed")
-    db.session.add(dog_breed)
-    db.session.commit()
+    form = DogForm()
+    if form.validate_on_submit():
+        dog = Dog(
+            name=form.name.data,
+            breed = form.breed.data,
+            owner= form.owner.data,
+            notes= form.notes.data)
+        db.session.add(dog)
+        db.session.commit()
     return "Added new dog breed to database"
 
 @app.route('/read')
