@@ -1,0 +1,21 @@
+<body>
+    <h1>Add a new dog:</h1>
+    <p>
+        <div class='form'>
+            <form method='POST' action=''>
+                <!-- hidden_tag() is required for form validation -->
+                {{ form.hidden_tag() }}
+                <!-- Each field displays its label followed by the input field itself -->
+                {{ form.name.label }} {{ form.name }}
+                <br>
+                {{ form.dob.label }} {{ form.dob }}
+                <br>
+                {{ form.breed.label }} {{ form.breed }}
+                <br>
+                <!-- form.submit is a button -->
+                {{ form.submit }}
+                <br>
+            </form>
+        </div>
+    </p>
+</body>

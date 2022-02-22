@@ -1,6 +1,6 @@
 from application import db # import the sqlalchemy object (db) created for our app
 
-class DogDatabase(db.Model):
+class Dog(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False)
     breed = db.Column(db.String(30), nullable=False) 
